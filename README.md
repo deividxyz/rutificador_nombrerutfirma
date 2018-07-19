@@ -17,8 +17,6 @@ Para ejecutar el proyecto, es preciso tener una instalación de Python 3.6 compa
 
 De cualquier modo, al momento de la redacción de este documento, estos requisitos pueden ser instalados de manera relativamente fácil mediante, por ejemplo, [MacPorts](https://www.macports.org/install.php) en sistemas Mac OS X. En sistemas Linux, estos paquetes son instalables mediante apt-get o similares, y en Windows, la forma recomendada es instalarlos con una distribución Python como [Anaconda](https://www.anaconda.com/download/#macos).
 
-En resumen, teniendo Python 3.6 instalado ejecutar
-
 #### Uso
 
 Primero, se debe generar un archivo que contenga los ruts a consultar, con extensión csv, el cual en su primera columna deberá contener los ruts, con o sin guión, y sin puntos separadores de miles. Este archivo deberá ser llamado ruts.csv y tiene que ser guardado en la misma carpeta del script y en codificación UTF-8.
