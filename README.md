@@ -13,9 +13,11 @@ El código de este repositorio permite, dada una lista de ruts suministrada por 
 
 #### Requisitos
 
-Para ejecutar el proyecto, es preciso tener una instalación de Python 3.6 compatible, con el paquete de Python (instalado con pip) Selenium. Además se debe instalar PhantomJS (http://phantomjs.org/download.html), y copiar el archivo ejecutable a una carpeta del $PATH de sistema (ej. en carpeta /usr/local/bin).
+Para ejecutar el proyecto, es preciso tener una instalación de Python 3.6 compatible, con el paquete de Python (instalado con <code>pip</code>) Selenium. Además se debe instalar PhantomJS (http://phantomjs.org/download.html), y copiar el archivo ejecutable a una carpeta del <code>$PATH</code> de sistema (ej. en carpeta /usr/local/bin).
 
 De cualquier modo, al momento de la redacción de este documento, estos requisitos pueden ser instalados de manera relativamente fácil mediante, por ejemplo, [MacPorts](https://www.macports.org/install.php) en sistemas Mac OS X. En sistemas Linux, estos paquetes son instalables mediante apt-get o similares, y en Windows, la forma recomendada es instalarlos con una distribución Python como [Anaconda](https://www.anaconda.com/download/#macos).
+
+En resumen, teniendo Python 3.6 instalado ejecutar
 
 #### Uso
 
