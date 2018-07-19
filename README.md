@@ -31,7 +31,7 @@ De cualquier modo, al momento de la redacción de este documento, estos requisit
 
 Primero, se debe generar un archivo que contenga los ruts a consultar, con extensión csv, el cual en su primera columna deberá contener los ruts, con o sin guión/separadores de miles. Este archivo deberá ser llamado ruts.csv y tiene que ser guardado en la misma carpeta del script y en codificación UTF-8.
 
-La separación utilizada para el CSV es ";" (punto y coma, semicolon, como quiera llamarlo).
+**La separación utilizada para el CSV es ";" (punto y coma, semicolon, como quiera llamarlo).**
 
 El script debe ser ejecutado desde una terminal, mediante el comando:
 
@@ -40,6 +40,8 @@ El script debe ser ejecutado desde una terminal, mediante el comando:
 El script leerá los ruts uno a uno y los irá guardando en un archivo de salida ruts_out.csv guardado en la misma carpeta del script. El script finalizará en tanto se hayan terminado los ruts a consultar. Por otra parte, la ejecución puede ser interrumpida en cualquier momento presionando las teclas Ctrl + C en la ventana del terminal. Ello guardará la información hasta el último rut que se haya consultado en el archivo de salida.
 
 El archivo csv de entrada (ruts.csv) debe tener codificación UTF-8. El archivo de salida tiene codificación UTF-8.
+
+**Este repositorio incluye un archivo ruts.csv, con ruts de personajes públicos del país (a modo de ejemplo)**
 
 ## TODO (pendientes)
 
