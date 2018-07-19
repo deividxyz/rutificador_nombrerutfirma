@@ -15,7 +15,7 @@ El código de este repositorio permite, dada una lista de ruts suministrada por 
 
 Para ejecutar el proyecto, es preciso tener una instalación de Python 3.6 compatible, con el paquete de Python (instalado con pip) Selenium. Además se debe instalar PhantomJS (http://phantomjs.org/download.html), y copiar el archivo ejecutable a una carpeta del $PATH de sistema (ej. en carpeta /usr/local/bin).
 
-De cualquier modo, al momento de la redacción de este documento, estos requisitos pueden ser instalados de manera relativamente fácil mediante, por ejemplo, [MacPorts](https://www.macports.org/install.php) en sistemas Mac OS X. En sistemas linux, estos paquetes son instalables mediante apt-get o similares, y en Windows, la forma recomendada es instalarlos con una distribución Python como [Anaconda](https://www.anaconda.com/download/#macos).
+De cualquier modo, al momento de la redacción de este documento, estos requisitos pueden ser instalados de manera relativamente fácil mediante, por ejemplo, [MacPorts](https://www.macports.org/install.php) en sistemas Mac OS X. En sistemas Linux, estos paquetes son instalables mediante apt-get o similares, y en Windows, la forma recomendada es instalarlos con una distribución Python como [Anaconda](https://www.anaconda.com/download/#macos).
 
 #### Uso
 
@@ -23,7 +23,7 @@ Primero, se debe generar un archivo que contenga los ruts a consultar, con exten
 
 El script debe ser ejecutado desde una terminal, mediante el comando:
 
-python3 nombre_rut_firma.py
+<code> python3 nombre_rut_firma.py </code>
 
 El script leerá los ruts uno a uno y los irá guardando en un archivo de salida ruts_out.csv guardado en la misma carpeta del script. El script finalizará en tanto se hayan terminado los ruts a consultar. Por otra parte, la ejecución puede ser interrumpida en cualquier momento presionando las teclas Ctrl + C en la ventana del terminal. Ello guardará la información hasta el último rut que se haya consultado en el archivo de salida.
 
