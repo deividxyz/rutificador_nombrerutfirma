@@ -17,9 +17,9 @@ El código de este repositorio permite, dada una lista de ruts suministrada por 
 
 - Python 3.6 (https://www.python.org/getit/).
 - Ejecutar <code>pip install selenium</code> en consola/terminal/cmd.exe
-- PhantomJS (http://phantomjs.org/download.html), extraer archivo .zip y copiar archivo phantomjs.exe de la carpeta bin en carpeta <code>C:\Windows</code> en **sistemas Windows**. 
+- PhantomJS (http://phantomjs.org/download.html), extraer archivo .zip y copiar archivo <code>phantomjs.exe</code> de la carpeta bin en carpeta <code>C:\Windows</code> en **sistemas Windows**. 
   
-  **En sistemas Mac/Linux**, copiar phantomjs de la carpeta bin a carpeta <code>/usr/local/bin</code>
+  **En sistemas Mac/Linux**, copiar archivo <code>phantomjs</code> de la carpeta bin a carpeta <code>/usr/local/bin</code>.
 
 ### Explicación larga (TL;DR)
 
