@@ -41,7 +41,7 @@ El script leerá los ruts uno a uno y los irá guardando en un archivo de salida
 
 El archivo csv de entrada (ruts.csv) debe tener codificación UTF-8. El archivo de salida tiene codificación UTF-8.
 
-**Este repositorio incluye un archivo ruts.csv, con ruts de personajes públicos del país (a modo de ejemplo)**
+**Este repositorio incluye un archivo ruts.csv, con ruts de personajes públicos del país (a modo de ejemplo).**
 
 ## TODO (pendientes)
 
