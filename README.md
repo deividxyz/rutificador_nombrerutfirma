@@ -29,7 +29,7 @@ De cualquier modo, al momento de la redacción de este documento, estos requisit
 
 ## Uso
 
-Primero, se debe generar un archivo que contenga los ruts a consultar, con extensión csv, el cual en su primera columna deberá contener los ruts, con o sin guión, y sin puntos separadores de miles. Este archivo deberá ser llamado ruts.csv y tiene que ser guardado en la misma carpeta del script y en codificación UTF-8.
+Primero, se debe generar un archivo que contenga los ruts a consultar, con extensión csv, el cual en su primera columna deberá contener los ruts, con o sin guión/separadores de miles. Este archivo deberá ser llamado ruts.csv y tiene que ser guardado en la misma carpeta del script y en codificación UTF-8.
 
 El script debe ser ejecutado desde una terminal, mediante el comando:
 
