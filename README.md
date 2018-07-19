@@ -3,7 +3,7 @@
 
 * * *
 
-#### Aviso Importante
+## Aviso Importante
 
 El presente proyecto no tiene relación alguna con el sitio https://www.nombrerutyfirma.cl ni con los datos almacenados en el mismo, ni tampoco con sus creadores/administradores. El presente código sólo sirve como medio de consulta a la base de datos alojada en [nombrerutyfirma.cl](https://nombrerutyfirma.cl). El autor se desliga de cualquier responsabilidad derivada del uso del presente código.
 
