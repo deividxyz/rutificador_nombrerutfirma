@@ -46,6 +46,7 @@ El archivo csv de entrada (ruts.csv) debe tener codificación UTF-8. El archivo 
 ## TODO (pendientes)
 
 - Lectura de ruts de un archivo distinto a ruts.csv.
+- Generador de ruts a partir de rango dado en STDIN.
 - Permitir pausar/reanudar.
 - Implementar en contenedor Docker.
 - Integrar con TOR para cambiar ip cada n consultas.
