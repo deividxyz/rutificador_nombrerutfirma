@@ -25,8 +25,8 @@ Ello instalará Homebrew en el caso que no esté instalado en el sistema. El ins
 
 Luego, ejecutar:
 
-<code>brew install python phantomjs
-pip3 install selenium</code>
+<code>brew install python phantomjs</code>
+<code>pip3 install selenium</code>
 
 ## Uso
 
