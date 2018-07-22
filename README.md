@@ -13,25 +13,24 @@ El código de este repositorio permite, dada una lista de ruts suministrada por 
 
 ## Requisitos
 
-### Versión corta
-
-- Python 3.6 (https://www.python.org/getit/).
-- Ejecutar <code>pip install selenium</code> en consola/terminal/cmd.exe
-- PhantomJS (http://phantomjs.org/download.html), extraer archivo .zip y copiar archivo <code>phantomjs.exe</code> de la carpeta bin en carpeta <code>C:\Windows</code> en **sistemas Windows**. 
+- [Python 3.6 o superior](https://www.python.org/downloads/).
+- [Selenium-Python](http://selenium-python.readthedocs.io) (instalado con <code>pip install selenium</code>).
+- [PhantomJS](http://phantomjs.org/download.html). 
   
-  **En sistemas Mac/Linux**, copiar archivo <code>phantomjs</code> de la carpeta bin a carpeta <code>/usr/local/bin</code>.
+[Homebrew](https://brew.sh) ofrece a los usuarios Mac instalar todas estas dependencias de manera fácil desde una ventana Terminal:
 
-### Explicación larga (TL;DR)
+<code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code> Instalará Homebrew en el caso que no esté instalado en el sistema. El instalador preguntará contraseña de administrador.
 
-Para ejecutar el proyecto, es preciso tener una instalación de Python 3.6 compatible, con el paquete de Python (instalado con <code>pip</code>) Selenium. Además se debe instalar PhantomJS (http://phantomjs.org/download.html), y copiar el archivo ejecutable a una carpeta del <code>$PATH</code> de sistema (ej. en carpeta /usr/local/bin).
+Luego, ejecutar:
 
-De cualquier modo, al momento de la redacción de este documento, estos requisitos pueden ser instalados de manera relativamente fácil mediante, por ejemplo, utilizando [MacPorts](https://www.macports.org/install.php) o [Homebrew](https://brew.sh/) en sistemas Mac OS X. En sistemas Linux, estos paquetes son instalables mediante apt-get o similares dependiendo de la distribución, y en Windows, la forma recomendada es instalarlos con una distribución Python como [Anaconda](https://www.anaconda.com/download/#macos).
+<code>brew install python phantomjs
+pip3 install selenium</code>
 
 ## Uso
 
 Primero, se debe generar un archivo que contenga los ruts a consultar, con extensión csv, el cual en su primera columna deberá contener los ruts, con o sin guión/separadores de miles. Este archivo deberá ser llamado ruts.csv y tiene que ser guardado en la misma carpeta del script y en codificación UTF-8.
 
-**La separación utilizada para el CSV es ";" (punto y coma, semicolon, como quiera llamarlo).**
+**La separación utilizada para el CSV es ";" (punto y coma).**
 
 El script debe ser ejecutado desde una terminal, mediante el comando:
 
