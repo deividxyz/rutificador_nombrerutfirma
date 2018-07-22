@@ -17,9 +17,11 @@ El código de este repositorio permite, dada una lista de ruts suministrada por 
 - [Selenium-Python](http://selenium-python.readthedocs.io) (instalado con <code>pip install selenium</code>).
 - [PhantomJS](http://phantomjs.org/download.html). 
   
-[Homebrew](https://brew.sh) ofrece a los usuarios Mac instalar todas estas dependencias de manera fácil desde una ventana Terminal:
+[Homebrew](https://brew.sh) ofrece a los usuarios Mac instalar todas estas dependencias de manera fácil desde una ventana Terminal, ejecutando:
 
-<code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code> Instalará Homebrew en el caso que no esté instalado en el sistema. El instalador preguntará contraseña de administrador.
+<code>/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code>
+
+Ello instalará Homebrew en el caso que no esté instalado en el sistema. El instalador preguntará contraseña de administrador.
 
 Luego, ejecutar:
 
