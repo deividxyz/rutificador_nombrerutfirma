@@ -1,81 +1,48 @@
 #!/usr/bin/env python3
 
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-import csv
-import time, sys
-import warnings
-import os
+import argparse
+import pathlib
+import nombrerutfirma_util as ut
 
-if not sys.warnoptions:
-    warnings.simplefilter("ignore")
+parser = argparse.ArgumentParser(description="Descarga información de nombrerutyfirma.com", epilog='https://deivid.xyz/')
+parser.add_argument('--ruts', type=str, nargs='*', help='RUT(s) a procesar. Estos deben tener el guion y DV, o bien, estar sin guion y sin DV.', required=False)
+parser.add_argument('--lista-rut', type=pathlib.Path, help='Ruta a archivo con lista de RUT a procesar. Espera que la primera columna contenga los RUT.', required=False)
+parser.add_argument('--delim', type=str, help='Delimitador de texto, para leer lista de RUT. Por defecto es ";".', default=';', required=False)
+parser.add_argument('--exportar-bd', type=pathlib.Path, help='Vuelca los contenidos de la BD a un archivo Excel a guardar en la carpeta indicada.', required=False)
 
-pwd = os.getcwd()
+p = parser.parse_args()
 
-print('')
-print('Rutificador automático para nombrerutyfirma.cl. Creado por deivid.')
-print('******************************************************************')
-print('')
-print('Para finalizar el proceso de manera anticipada, oprima Ctrl + C ...')
-print('')
+if p.ruts != None and p.lista_rut != None:
+    print("No se permiten ambos argumentos al mismo tiempo, saliendo ...")
+    
+elif p.ruts != None:
+    
+    con = ut.connectDB()
+    for x in p.ruts:
+        
+        nombre, rut, sexo, direccion, comuna = ut.buscarRut(ut.cleanse(x))
+        ut.insertRUT(con, nombre, rut, sexo, direccion, comuna)
+    
+    con.close()
+    
+elif p.lista_rut != None:
+    
+    con = ut.connectDB()
+    ruts = ut.leerListaRUT(p.lista_rut, p.delim)
+    ruts_pendientes = ruts.copy(deep=True) # lista con ruts pendientes
+    for i, x in ruts.iteritems():
+        
+        nombre, rut, sexo, direccion, comuna = ut.buscarRut(ut.cleanse(x))
+        ut.insertRUT(con, nombre, rut, sexo, direccion, comuna)
+        ruts_pendientes.pop(i) # sacamos el rut de los pendientes
+        
+    con.close()
 
-driver = webdriver.PhantomJS()
-driver.get('https://nombrerutyfirma.cl')
+elif p.exportar_bd != None:
 
-driver.implicitly_wait(10)
-
-filas = []
-
-try:
-
-	ruts_out = open('ruts_out.csv', 'w')
-
-	with open('ruts.csv', newline='', encoding='utf-8-sig') as f:
-		reader = csv.reader(f, delimiter=';', quoting=csv.QUOTE_NONE)
-		for row in reader:
-			
-			driver.find_elements_by_xpath("//*[contains(text(),'RUT')]")[0].click()
-
-			busca_rut = driver.find_elements_by_xpath("//input[@placeholder='Buscar por RUT']")[0]
-			busca_rut.send_keys(row[0])
-			
-			print('Procesando rut: ' + row[0])
-
-			boton = driver.find_elements_by_xpath("//div[@class='tab-pane active']//input[@type='submit']")[0]
-			boton.click()
-
-			try:
-
-				nombre = driver.find_element_by_xpath("//tr[@tabindex='1']/td[1]").text
-				rut = driver.find_element_by_xpath("//tr[@tabindex='1']/td[2]").text
-				sexo = driver.find_element_by_xpath("//tr[@tabindex='1']/td[3]").text
-				direccion = driver.find_element_by_xpath("//tr[@tabindex='1']/td[4]").text
-				comuna = driver.find_element_by_xpath("//tr[@tabindex='1']/td[5]").text
-
-				linea = nombre + ";" + rut + ";" + sexo + ";" + direccion + ";" + comuna
-
-			except NoSuchElementException:
-
-				print('El rut ' + row[0] + ' no existe en la BD, saltando ...')
-
-			print(linea)
-			print('')
-			ruts_out.write(linea + '\n')
-
-			filas.append(linea)
-
-			sgte = driver.find_element_by_xpath("//*[contains(text(),'Buscar otro')]")
-			sgte.click()
-
-except IOError as e:
-
-	print ("No se ha encontrado ruts.csv (archivo de entrada).")
-	print ("Carpeta: " + pwd)
-	print ("")
-
-except KeyboardInterrupt:
-
-	print ("Ctrl + C detectado, interrumpiendo ejecución...")
-	print ("")
-
-ruts_out.close()
+    con = ut.connectDB()
+    ut.exportToXLSX(con, p.exportar_bd)
+    
+else:
+    
+    print ("No se indicaron argumentos, saliendo ...")
