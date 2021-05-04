@@ -3,6 +3,7 @@
 import argparse
 import pathlib
 import nombrerutfirma_util as ut
+import sys
 
 parser = argparse.ArgumentParser(description="Descarga información de nombrerutyfirma.com", epilog='https://deivid.xyz/')
 parser.add_argument('--ruts', type=str, nargs='*', help='RUT(s) a procesar. Estos deben tener el guion y DV, o bien, estar sin guion y sin DV.', required=False)
@@ -45,4 +46,5 @@ elif p.exportar_bd != None:
     
 else:
     
+    parser.print_help(sys.stderr)
     print ("No se indicaron argumentos, saliendo ...")
